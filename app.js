@@ -1,16 +1,18 @@
 // get the element to insert text
 const typingDiv = document.querySelector('#typing');
 let text, characters;
+async function getText(){
+    return fetch('./text.json')
+    .then(res => res.json)
+    .then(data => data.python)
+}
 
-fetch('./text.json')
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
-        text = data.python;
-        // to make sure that the game don't start before the data is loaded
-        startGame();
-    });
+async const startGame = () => {
+    const text = getText()
+    text.split(' ').joint(' ')
+    console.log(text)
+
+}
 
 const startGame = () => {
     shuffledSentence(text);
