@@ -44,13 +44,32 @@ body {
 .right {
     align-items: flex-end;
 }
-
-.typing-container {
+#time {
     font-size: 2rem;
+}
+#errors {
+    padding-top: 0.6rem;
+    color: #f05353;
+}
+.typing-container {
+    font-size: 1.8rem;
 }
 
 .cursor {
     background-color: aqua;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .correct {
